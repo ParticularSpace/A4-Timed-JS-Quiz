@@ -20,6 +20,13 @@ body {
     font-size: 100%;
     background-color: bisque;
 }
+/* Why cant i make this button bigger? */
+.start{
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: 150%;
+}
 
 .quiz-header {
     display: flex;
