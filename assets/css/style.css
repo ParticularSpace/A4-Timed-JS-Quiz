@@ -3,7 +3,7 @@ body {
     font-size: 18px;
 }
 
-.header {
+.header h1 {
     display: flex;
     justify-content: start;
     font-family: 'Times New Roman', Times, serif;
@@ -13,9 +13,18 @@ body {
     background-color: rgb(96, 145, 165);
 }
 
+.header h2 {
+    display: flex;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 100%;
+    background-color: bisque;
+}
+
 .quiz-header {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     font-family: 'Times New Roman', Times, serif;
     font-size: 100%;
     font-size: 120%;
@@ -36,4 +45,13 @@ body {
     max-width: 800px;
     padding: 30px 40px;
     
+  }
+
+  .answers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
   }
