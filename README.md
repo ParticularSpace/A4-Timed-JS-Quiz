@@ -10,7 +10,7 @@ A quiz to test you on basic javaScript!
 
 ## Usage
 
-Click the start button to begin the quiz, get the quest right and move onto the next. Get it wrong and lose 10 seconds from your time.    
+Click the start button to begin the quiz, get the question right and move onto the next. Get it wrong and lose 10 seconds from your time.    
 
 ## Screenshot
 ![A picture of the webpage](assets/images/nodeScreenShot.png "jS Quiz")
