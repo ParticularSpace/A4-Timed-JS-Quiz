@@ -96,6 +96,13 @@
     background-color: #c8bdbd;
   }
 
+  .quiz-end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
   @media screen and (max-width: 750px) {
     .answers button {
       flex: 1 1 100%;

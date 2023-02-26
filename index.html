@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>javaScript Quiz</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -17,29 +17,25 @@
             <h2>Try to answer the following javaScript questions within the time limit. Keep in mind that incorrect
                 answers will penalize your time by ten seconds!</h2>
         </div>
-        <!-- //i need to make this button bigger? -->
         <div class="start">
-            <button id="start">Start Quiz</button>
+            <button id="start-btn">Start Quiz</button>
         </div>
         <div class="timer">
-            <h2>Timer: <span id="time">50</span></h2>
+            <h2>Timer: <span id="quiz-timer">50</span></h2>
         </div>
         <div class="score">
-            <h2>Score: <span id="score">0</span></h2>
+            <h2>Score: <span id="quiz-score">0</span></h2>
         </div>
         <div class="quiz">
             <div class="quiz-header">
-                <h1 class="question">Question 1: What naming convention do we type JavaScript in?</h1>
-                <div class="answers">
-                    <button id="q1">A. camelCase</button>
-                    <button id="q2">B. CSS</button>
-                    <button id="q3">C. Java</button>
-                    <button id="q4">D. JavaScript</button>
+                <h1 class="question" id="quiz-question"></h1>
+                <div class="answers" id="quiz-answers">
                 </div>
             </div>
+            <div class="quiz-end" id="quiz-end"></div>
         </div>
     </div>
-    <script src="assets/javaScript/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
