@@ -65,7 +65,7 @@ const myQuestions = [
     correctAnswer: 'a',
 },
 {
-    question: "Whats the best music to listen too while coding javaScript?",
+    question: "What's the best music to listen to while coding javaScript?",
     answers: {
          a: "EDM!",
          b: "Jazz",
@@ -132,7 +132,7 @@ function saveScore() {
     };
     highScores.push(newScore);
     localStorage.setItem("highScores", JSON.stringify(highScores));
-    window.location.href = "highscores.html";
+    window.location.href = "highScores.html";
 }
     
 
