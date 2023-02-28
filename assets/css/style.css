@@ -39,10 +39,35 @@
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
+
   .start button:hover {
     background-color: #162f4a;
   }
+
+  /* Style the restart button
+
+    .restart {
+      display: none; 
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .restart button {
+      font-size: 105%;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #88a4ea;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+  
+    .restart button:hover {
+      background-color: #162f4a;
+    } 
+    */
   
   /* Style the timer and score */
   .timer, .score {
@@ -93,7 +118,7 @@
   }
   
   .answers button:hover {
-    background-color: #c8bdbd;
+    background-color: rgb(200, 188, 172);
   }
 
   .quiz-end {
@@ -103,8 +128,18 @@
     flex-direction: column;
   }
 
-  #highScores {
-    list-style-type: decimal;
+  .leaderBoard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .leaderBoard h1 {
+    font-size: 105%;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color:antiquewhite
   }
 
   @media screen and (max-width: 750px) {

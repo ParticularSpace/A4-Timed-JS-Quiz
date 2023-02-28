@@ -7,8 +7,6 @@ var quizAnswers = document.getElementById("quiz-answers");
 var quizTimer = document.getElementById("quiz-timer");
 var quizScore = document.getElementById("quiz-score");
 var quizEnd = document.getElementById("quiz-end");
-
-
 var countdown;
 
 
@@ -100,7 +98,6 @@ function showQuestions() {
     }
 };
 
-// i dont want an alert to pop up when i click on the correct answer
 function checkAnswer() {
     if (this.value === myQuestions[currentQuestion].correctAnswer) {
         score++;
@@ -120,9 +117,14 @@ function endQuiz() {
     clearInterval(countdown);
     quizQuestion.textContent = "All done!";
     quizAnswers.innerHTML = "";
-    quizEnd.classList.remove("hide");
     quizEnd.textContent = "Your final score is " + score + " out of " + myQuestions.length + "!";
     saveHighScore();
+    startButton.style.display = "";
+    startButton.textContent = "Restart Quiz";
+    startButton.addEventListener("click", function () {
+            location.reload();
+         });
+    
 }
 
 function saveHighScore() {
@@ -163,6 +165,19 @@ function saveHighScore() {
 };
 
 // create a button to clear the high scores
+
+var clearButton = document.getElementById("clear-btn");
+
+clearButton.addEventListener("click", function () {
+    localStorage.clear();
+    location.reload();
+});
+
+// var restartButton = document.getElementById("restart-btn");
+
+// restartButton.addEventListener("click", function () {
+//     location.reload();
+// });
 
 
 
