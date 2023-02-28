@@ -8,21 +8,21 @@ var quizTimer = document.getElementById("quiz-timer");
 var quizScore = document.getElementById("quiz-score");
 var quizEnd = document.getElementById("quiz-end");
 
+
 var countdown;
 
 
 
 // Start the quiz
 
-startButton.addEventListener("click", function() {
+startButton.addEventListener("click", function () {
     // Hide the start button
     startButton.style.display = "none";
-    // Show the quiz
     document.querySelector('.quiz').classList.remove('hide');
     // Call the showQuestions() function to display the first question
     showQuestions();
     // Start the timer
-    countdown = setInterval(function() {
+    countdown = setInterval(function () {
         timer--;
         quizTimer.textContent = timer;
 
@@ -33,57 +33,58 @@ startButton.addEventListener("click", function() {
     }, 1000);
 });
 
+// questions and answers
 const myQuestions = [
     {
-    question: "Which of the following is written correctly?",
-    answers: {
-         a: "Helloworld",
-         b: "helloworld",
-         c: "HelloWorld",
-         d: "helloWorld"
+        question: "Which of the following is written correctly?",
+        answers: {
+            a: "Helloworld",
+            b: "helloworld",
+            c: "HelloWorld",
+            d: "helloWorld"
         },
-    correctAnswer: 'd',
-},
-{
-    question: "What is this quiz about?",
-    answers: {
-         a: "Top Spotify Artists",
-         b: "How to roast a chicken",
-         c: "About my favorite food sushi",
-         d: "How to be a pro at javascript"
+        correctAnswer: 'd',
+    },
+    {
+        question: "What is this quiz about?",
+        answers: {
+            a: "Top Spotify Artists",
+            b: "How to roast a chicken",
+            c: "About my favorite food sushi",
+            d: "How to be a pro at javascript"
         },
-    correctAnswer: 'd',
-},
-{
-    question: "Where can you learn to code javaScript?",
-    answers: {
-         a: "UC Berkeley Coding Boot camp Extension",
-         b: "Watch netflix",
-         c: "Socializing with friends",
-         d: "Having a life"
+        correctAnswer: 'd',
+    },
+    {
+        question: "Where can you learn to code javaScript?",
+        answers: {
+            a: "UC Berkeley Coding Boot camp Extension",
+            b: "Watch netflix",
+            c: "Socializing with friends",
+            d: "Having a life"
         },
-    correctAnswer: 'a',
-},
-{
-    question: "What's the best music to listen to while coding javaScript?",
-    answers: {
-         a: "EDM!",
-         b: "Jazz",
-         c: "lof-fi",
-         d: "ANYTHING but country"
+        correctAnswer: 'a',
+    },
+    {
+        question: "What's the best music to listen to while coding javaScript?",
+        answers: {
+            a: "EDM!",
+            b: "Jazz",
+            c: "lof-fi",
+            d: "ANYTHING but country"
         },
-    correctAnswer: 'd',
-},
-{
-    question: "Do you eat while you code javaScript?",
-    answers: {
-         a: "I have the dustiest keyboard in the world",
-         b: "I have the cleanest keyboard in the world",
-         c: "Its impossible to eat and code at the same time",
-         d: "We aren't perfect but we aren't slobs either"
+        correctAnswer: 'd',
+    },
+    {
+        question: "Do you eat while you code javaScript?",
+        answers: {
+            a: "I have the dustiest keyboard in the world",
+            b: "I have the cleanest keyboard in the world",
+            c: "Its impossible to eat and code at the same time",
+            d: "We aren't perfect but we aren't slobs either"
         },
-    correctAnswer: 'd',
-  }
+        correctAnswer: 'd',
+    }
 ];
 
 function showQuestions() {
@@ -99,7 +100,7 @@ function showQuestions() {
     }
 };
 
- // i dont want an alert to pop up when i click on the correct answer
+// i dont want an alert to pop up when i click on the correct answer
 function checkAnswer() {
     if (this.value === myQuestions[currentQuestion].correctAnswer) {
         score++;
@@ -116,23 +117,61 @@ function checkAnswer() {
 };
 
 function endQuiz() {
-        clearInterval(countdown);
-        quizQuestion.textContent = "All done!";
-        quizAnswers.innerHTML = "";
-        quizEnd.classList.remove("hide");
-        quizEnd.textContent = "Your final score is " + score + " out of " + myQuestions.length + "!";
+    clearInterval(countdown);
+    quizQuestion.textContent = "All done!";
+    quizAnswers.innerHTML = "";
+    quizEnd.classList.remove("hide");
+    quizEnd.textContent = "Your final score is " + score + " out of " + myQuestions.length + "!";
+    saveHighScore();
+}
+
+function saveHighScore() {
+
+    var initials = prompt("Enter your initials to save your score!");
+
+    if (initials === null) {
+        return;
     }
 
-function saveScore() {
-    var initials = document.querySelector("#initials").value;
-    var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-    var newScore = {
-        score: score,
-        initials: initials
+    var highScore = {
+        initials: initials,
+        score: score
     };
-    highScores.push(newScore);
+
+
+    // Pull any existing high scores from local storage
+    var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+    // Add the new high score
+    highScores.push(highScore);
+
+    // Sort the high scores by score
+    highScores.sort(function (a, b) {
+        return b.score - a.score;
+    });
+
+    // Display the high scores
+    var highScoresList = document.getElementById("highScores");
+
     localStorage.setItem("highScores", JSON.stringify(highScores));
-    window.location.href = "highScores.html";
-}
-    
+
+    for (var i = 0; i < highScores.length; i++) {
+        var listItem = document.createElement("li");
+        listItem.textContent = highScores[i].initials + " - " + highScores[i].score;
+        highScoresList.appendChild(listItem);
+    };
+};
+
+// create a button to clear the high scores
+
+
+
+
+
+
+
+
+
+
+
 

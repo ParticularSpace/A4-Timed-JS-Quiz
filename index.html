@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javaScript Quiz</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -29,10 +29,14 @@
         <div class="quiz">
             <div class="quiz-header">
                 <h1 class="question" id="quiz-question"></h1>
-                <div class="answers" id="quiz-answers">
-                </div>
+                <div class="answers" id="quiz-answers"></div>
+                <div class="quiz-end" id="quiz-end"></div>
+
             </div>
-            <div class="quiz-end" id="quiz-end"></div>
+            <div class="leaderBoard">
+                <h1>Leader board</h1>
+                <ol id="highScores"></ol>
+            </div>
         </div>
     </div>
     <script src="assets/js/script.js"></script>

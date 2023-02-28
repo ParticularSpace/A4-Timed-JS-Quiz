@@ -103,6 +103,10 @@
     flex-direction: column;
   }
 
+  #highScores {
+    list-style-type: decimal;
+  }
+
   @media screen and (max-width: 750px) {
     .answers button {
       flex: 1 1 100%;
