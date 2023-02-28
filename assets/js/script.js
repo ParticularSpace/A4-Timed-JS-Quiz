@@ -173,12 +173,6 @@ clearButton.addEventListener("click", function () {
     location.reload();
 });
 
-// var restartButton = document.getElementById("restart-btn");
-
-// restartButton.addEventListener("click", function () {
-//     location.reload();
-// });
-
 
 
 
