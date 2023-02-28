@@ -84,7 +84,7 @@ const myQuestions = [
         correctAnswer: 'd',
     }
 ];
-
+// displays the questions and answers listen for a click on the answer buttons
 function showQuestions() {
     var myQuestion = myQuestions[currentQuestion];
     quizQuestion.textContent = myQuestion.question;
@@ -97,7 +97,7 @@ function showQuestions() {
         quizAnswers.appendChild(button);
     }
 };
-
+// checks the answer and adds to the score if correct and subtracts time if wrong
 function checkAnswer() {
     if (this.value === myQuestions[currentQuestion].correctAnswer) {
         score++;
@@ -112,7 +112,7 @@ function checkAnswer() {
         showQuestions();
     }
 };
-
+// ends the quiz and displays the score and prompts to save the score to local storage also displays the restart button
 function endQuiz() {
     clearInterval(countdown);
     quizQuestion.textContent = "All done!";
@@ -122,37 +122,36 @@ function endQuiz() {
     startButton.style.display = "";
     startButton.textContent = "Restart Quiz";
     startButton.addEventListener("click", function () {
-            location.reload();
-         });
-    
-}
+        location.reload();
+    });
 
+}
+// saves the score to local storage and displays the high scores
 function saveHighScore() {
 
     var initials = prompt("Enter your initials to save your score!");
 
-    if (initials === null) {
-        return;
+    if (initials === '') {
+        initials = "Anonymous";
     }
-
+    
     var highScore = {
         initials: initials,
         score: score
     };
 
-
-    // Pull any existing high scores from local storage
+    // Pull any existing high scores from local storage and parse them into an array or if there are none, create an empty array
     var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
-    // Add the new high score
+    // Add the new high score to the array
     highScores.push(highScore);
 
-    // Sort the high scores by score
+    // Sort the high scores by score in descending order
     highScores.sort(function (a, b) {
         return b.score - a.score;
     });
 
-    // Display the high scores
+    // Display the high scores 
     var highScoresList = document.getElementById("highScores");
 
     localStorage.setItem("highScores", JSON.stringify(highScores));
@@ -164,7 +163,7 @@ function saveHighScore() {
     };
 };
 
-// create a button to clear the high scores
+// creates a event listener for the clear button then clears the local storage and reloads the page
 
 var clearButton = document.getElementById("clear-btn");
 

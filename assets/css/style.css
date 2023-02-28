@@ -43,33 +43,7 @@
   .start button:hover {
     background-color: #162f4a;
   }
-
-  /* Style the restart button
-
-    .restart {
-      display: none; 
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    
-    .restart button {
-      font-size: 105%;
-      font-weight: bold;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      background-color: #88a4ea;
-      color: #fff;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-  
-    .restart button:hover {
-      background-color: #162f4a;
-    } 
-    */
-  
-  /* Style the timer and score */
+ /* Style the timer and score */
   .timer, .score {
     margin-bottom: 20px;
   }
@@ -86,7 +60,7 @@
   .quiz-header {
     margin-bottom: 20px;
   }
-
+  /* Style the question */
   .question {
     display: flex;
     justify-content: center;
@@ -127,7 +101,7 @@
     align-items: center;
     flex-direction: column;
   }
-
+  /* Style the quiz/leaderBoard */
   .leaderBoard {
     display: flex;
     flex-direction: column;
@@ -141,7 +115,7 @@
     margin-bottom: 10px;
     background-color:antiquewhite
   }
-
+  /* responsive */
   @media screen and (max-width: 750px) {
     .answers button {
       flex: 1 1 100%;
