@@ -2,7 +2,8 @@
 
 ## URL
 
-https://particularspace.github.io/A4-Web-API/
+https://particularspace.github.io/A4-Timed-JS-Quiz/
+
 
 ## Description
 
